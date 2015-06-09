@@ -19,17 +19,17 @@ public class AnalizaFile{
   public int getLines(){
     int numLines = 0;
     try{
-      fr = new FileReader(aarchivo);
+      fr = new FileReader(aarchivo);        //se abre el archivo
       br = new BufferedReader(fr);
-      while((rdline = br.readLine()) != null){
-      numLines++;
+      while((rdline = br.readLine()) != null){    //lectura de lineas
+        numLines++;
       }
     }catch(java.io.IOException ioex){
       return -1;
     }finally{
       try{
         if(null != fr){
-          fr.close();
+          fr.close();       //cierra el archivo
         }
       }catch(java.io.IOException ioex){
       }
@@ -39,15 +39,15 @@ public class AnalizaFile{
 //Metodo que obtiene la primera linea del txt//
   public String getFirstLine(){
     try{
-      fr = new FileReader(aarchivo);
+      fr = new FileReader(aarchivo);  //se abre el archivo
       br = new BufferedReader(fr);
-      rdline = br.readLine();
+      rdline = br.readLine();     //lee una linea
     }catch(java.io.IOException ioex){
       return "ERROR,  especificar un nombre de archivo";
     }finally{
       try{
         if(null != fr){
-          fr.close();
+          fr.close();       //cierre de archivo
         }
       }catch(java.io.IOException ioex){
       }
@@ -59,17 +59,17 @@ public class AnalizaFile{
     int firtLines = 0;
     String lastLine="";
     try{
-      fr = new FileReader(aarchivo);
+      fr = new FileReader(aarchivo);        //abre el archivo
       br = new BufferedReader(fr);
-      while((rdline = br.readLine()) != null){
-        lastLine = rdline;
+      while((rdline = br.readLine()) != null){      //lee el archivo
+        lastLine = rdline;          //lee la ultima linea
       }
     }catch(java.io.IOException ioex){
       return "ERROR,  especificar un nombre de archivo";
     }finally{
       try{
         if(null != fr){
-          fr.close();
+          fr.close();     //se cierra el archivo
         }
       }catch(java.io.IOException ioex){
       }
@@ -81,13 +81,8 @@ public class AnalizaFile{
     aarchivo = nfile;
   }
 //Creditos con informacion del proyecto//
-  public void creditos(){
-    System.out.println("Programa: Lectura de archivos");
-    System.out.println("Docente: Dr. Juan Carlos Lopez Pimentel");
-    System.out.println("Intregrandes del equipo: \n Diana Alondra Toledo Maza: 143355 \n Hugo Sarmiento Toledo: 143359\n Carlos Alejandro Zenteno Robles:143382");
-    System.out.println("Asignatura: Programacion Orientada a Objetos");
-    System.out.println("Corte: 1er");
-    System.out.println("Fecha de entrega:05/30/2015");
+  public String creditos(){
+    return "Programa: Lectura de archivos\nDocente: Dr. Juan Carlos Lopez Pimentel\nIntregrandes del equipo: \n Diana Alondra Toledo Maza: 143355 \n Hugo Sarmiento Toledo: 143359\n Carlos Alejandro Zenteno Robles:143382\nAsignatura: Programacion Orientada a Objetos\nCorte: 1er\nFecha de entrega:05/30/2015";
   }
 
 }
