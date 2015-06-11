@@ -10,6 +10,7 @@ public class AnalizaFile{
 
 //Constructor por default: se tuvo que declarar ya que sin el no reconocia el Constructor por default//
   public AnalizaFile(){
+    aarchivo = " ";
   }
 //Constructor con parametro del nombre del archivo//
   public AnalizaFile(String nombre_archivo){
